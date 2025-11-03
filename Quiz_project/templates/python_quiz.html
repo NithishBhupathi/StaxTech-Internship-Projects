@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html> 
+    <head> 
+        <title>PYTHON Quiz</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div class="questions">
+             <p id="timer">Time left: 30 seconds</p>
+
+            <form method="POST" action="/python_result"> 
+
+              <p>1.Who invented python language?</p>
+              <input type="radio" name="Q1" value="Berners Lee"> Berners Lee<br>
+              <input type="radio" name="Q1" value="Gudio Van Rossum"> Gudio Van Rossum<br>
+              <input type="radio" name="Q1" value="Brendan Eich"> Brendan Eich <br>
+              <input type="radio" name="Q1" value="Dennis Rithche"> Dennis Rithche<br>
+              <p>2.Which of the following is not a datatype?</p>
+              <input type="radio" name="Q2" value="Variable"> Variable<br>
+              <input type="radio" name="Q2" value="String"> String<br>
+              <input type="radio" name="Q2" value="Tuple"> Tuple<br>
+              <input type="radio" name="Q2" value="Float"> Float<br>
+
+              <button onclick="location.href='result.html'">Submit</button>
+            </form>
+        </div>
+       <script>
+        let timeLeft = 30; // seconds
+        const timerDisplay = document.getElementById("timer");
+        const form = document.querySelector("form");
+
+        const countdown = setInterval(() => {
+            timeLeft--;
+            timerDisplay.textContent = "Time left: " + timeLeft + " seconds";
+
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                form.submit(); // auto submit form
+            }
+        }, 1000);
+    </script>
+ </body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quiz Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+   </head>
+   <body>
+    <div class="result-container">
+   <h2>{{ quiz_name }} Completed!</h2><br>
+
+    <p class="score">Your Score: {{ score }} / {{ total }}</p><br>
+
+    <a href="/">Back to Home</a>
+    </div>
+   </body>
+</html>
