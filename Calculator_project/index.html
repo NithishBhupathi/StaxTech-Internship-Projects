@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="calculator">
+    <h1>Simple Calculator</h1>
+    <form action="/cgi-bin/calc.py" method="post">
+      <input type="number" name="num1" placeholder="Enter first number" required>
+      <input type="number" name="num2" placeholder="Enter second number" required>
+      
+      <select name="operation">
+        <option value="add">Addition (+)</option>
+        <option value="sub">Subtraction (-)</option>
+        <option value="mul">Multiplication (×)</option>
+        <option value="div">Division (÷)</option>
+      </select>
+      
+      <button type="submit">Calculate</button>
+    </form>
+  </div>
+</body>
+</html>
